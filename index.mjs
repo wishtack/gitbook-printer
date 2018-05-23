@@ -13,7 +13,7 @@ export class GitbookPrinter {
         for (const [index, path] of pathList.entries()) {
 
             const pageUrl = `${url}/${path}`;
-            const pdfPath = `out/${100 + index}.pdf`;
+            const pdfPath = `out/${100 + index}-${path.replace(/\//g, '-') || 'welcome'}.pdf`;
 
             console.debug(`Printing: ${pageUrl}...`);
             await this._printPage({
@@ -45,7 +45,7 @@ export class GitbookPrinter {
         await page.pdf({
             path: pdfPath,
             format: 'A4',
-            landscape: true
+            landscape: false
         });
 
     }
