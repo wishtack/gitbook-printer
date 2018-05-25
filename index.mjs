@@ -149,6 +149,6 @@ if (commander.baseUrl == null || commander.summaryPath == null) {
 new GitbookPrinter({
     baseUrl: commander.baseUrl,
     summaryPath: commander.summaryPath,
-    outPath: commander.outDirPath || 'out'
+    outPath: commander.out || 'out'
 })
     .savePdf();
