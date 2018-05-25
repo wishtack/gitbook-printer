@@ -5,6 +5,11 @@ This is a basic tool that will read your Gitbook's `SUMMARY.md`, crawl your cour
 # Usage
 
 ```
-yarn global add gitbook-printer
+yarn global add @wishtack/gitbook-printer
 gitbook-printer --base-url https://your-gitbook-url --summary-path ./SUMMARY.md
+```
+
+## or for npm users
+```
+npm install -g @wishtack/gitbook-printer
 ```
