@@ -1,3 +1,5 @@
+#!/usr/bin/env node --experimental-modules
+
 /**
  *
  * (c) 2013-2018 Wishtack
@@ -132,8 +134,9 @@ export class GitbookPrinter {
 }
 
 commander
-    .option('-b, --base-url <baseUrl>', 'Gitbook Base URL')
-    .option('-s, --summary-path <summaryPath>', 'File Path to SUMMARY.md')
+    .option('-b, --base-url <baseUrl>', 'Gitbook Base URL.')
+    .option('-s, --summary-path <summaryPath>', 'File Path to SUMMARY.md.')
+    .options('-o, --out <outDirPath>', 'Output directory.')
     .parse(process.argv);
 
 if (commander.baseUrl == null || commander.summaryPath == null) {
@@ -143,6 +146,6 @@ if (commander.baseUrl == null || commander.summaryPath == null) {
 new GitbookPrinter({
     baseUrl: commander.baseUrl,
     summaryPath: commander.summaryPath,
-    outPath: 'out'
+    outPath: commander.outDirPath || 'out'
 })
     .savePdf();
