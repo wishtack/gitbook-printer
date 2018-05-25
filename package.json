@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "index.mjs",
   "license": "MIT",
+  "repository": "github:wishtack/gitbook-printer",
   "bin": {
     "gitbook-printer": "index.mjs"
   },
