@@ -124,11 +124,14 @@ export class GitbookPrinter {
 
         return summary
             .split('\n')
+            /* Ignore empty lines. */
             .filter(line => line.length > 0)
-            .map(line => line.match(/\((.+).md\)/))
+            /* Grab link URLs. */
+            .map(line => line.match(/\((.*?).md\)/))
             .filter(match => match != null)
             .map(match => match[1])
-            .map(value => value === 'README' ? '' : value);
+            /* Remove /README suffix. */
+            .map(url => url.replace(/README$/, ''));
 
     }
 }
