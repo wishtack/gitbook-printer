@@ -1,6 +1,6 @@
 # Gitbook Printer
 
-This is a basic tool that will read your Gitbook's `SUMMARY.md`, crawl your course using Chrome *(puppeteer)* and produce a PDF file with all the content in `out/gitbook.pdf`.
+This is a basic tool that will read your **New Gitbook**'s `SUMMARY.md`, crawl your course using Chrome *(puppeteer)* and produce a PDF file with all the content in `out/gitbook.pdf`.
 
 # Usage
 
