@@ -1,4 +1,4 @@
-#!/usr/bin/env node --experimental-modules
+#!/usr/bin/env node
 
 /**
  *
@@ -7,16 +7,16 @@
  *
  */
 
-import addZero from 'add-zero';
-import commander from 'commander';
-import easyPdfMerge from 'easy-pdf-merge';
-import fs from 'fs';
-import path from 'path';
-import puppeteer from 'puppeteer';
-import rimraf from 'rimraf';
-import util from 'util';
+const addZero = require('add-zero');
+const commander = require('commander');
+const easyPdfMerge = require('easy-pdf-merge');
+const fs = require('fs');
+const path = require('path');
+const puppeteer = require('puppeteer');
+const rimraf = require('rimraf');
+const util = require('util');
 
-export class GitbookPrinter {
+class GitbookPrinter {
 
     constructor({baseUrl, outPath, summaryPath}) {
         this._baseUrl = baseUrl;
@@ -118,8 +118,6 @@ export class GitbookPrinter {
 
     async _getChapterPathList() {
 
-        const {default: fs} = await import('fs');
-
         const summary = fs.readFileSync(this._summaryPath, 'utf-8');
 
         return summary
@@ -151,4 +149,9 @@ new GitbookPrinter({
     summaryPath: commander.summaryPath,
     outPath: commander.out || 'out'
 })
-    .savePdf();
+    .savePdf()
+    .catch(console.error);
+
+module.exports = {
+    GitbookPrinter
+};

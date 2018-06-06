@@ -1,14 +1,14 @@
 {
   "name": "@wishtack/gitbook-printer",
   "version": "0.1.2",
-  "main": "index.mjs",
+  "main": "index.js",
   "license": "MIT",
   "repository": "github:wishtack/gitbook-printer",
   "bin": {
-    "gitbook-printer": "index.mjs"
+    "gitbook-printer": "index.js"
   },
   "scripts": {
-    "print": "node --experimental-modules index.mjs"
+    "print": "node index.js"
   },
   "dependencies": {
     "add-zero": "^1.0.0",
