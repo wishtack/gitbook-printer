@@ -1,6 +1,6 @@
 {
   "name": "@wishtack/gitbook-printer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "license": "MIT",
   "repository": "github:wishtack/gitbook-printer",
@@ -16,5 +16,8 @@
     "easy-pdf-merge": "^0.1.3",
     "puppeteer": "^1.4.0",
     "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "standard-version": "^4.4.0"
   }
 }
