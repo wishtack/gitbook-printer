@@ -8,7 +8,8 @@
     "gitbook-printer": "index.js"
   },
   "scripts": {
-    "print": "node index.js"
+    "print": "node index.js",
+    "release": "standard-version && npm publish && git push --follow-tags origin master"
   },
   "dependencies": {
     "add-zero": "^1.0.0",
