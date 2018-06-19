@@ -19,7 +19,7 @@ const util = require('util');
 class GitbookPrinter {
 
     constructor({baseUrl, outPath, summaryPath}) {
-        this._baseUrl = baseUrl;
+        this._baseUrl = baseUrl.replace(/\/+$/, '');
         this._outPath = outPath;
         this._partialsPath = path.join(this._outPath, 'partials');
         this._summaryPath = summaryPath;
