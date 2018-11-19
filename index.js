@@ -98,7 +98,7 @@ class GitbookPrinter {
     async _printPage({page, pageUrl, pdfFilePath}) {
 
         await page.goto(pageUrl, {
-            waitUntil: 'networkidle2'
+            waitUntil: 'networkidle0'
         });
 
         await page.evaluate(() => {
